@@ -373,7 +373,7 @@ function App() {
                 <img src="https://scontent-atl3-1.xx.fbcdn.net/v/t1.15752-9/678589465_958977559842058_5376383858371377142_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=j3CSNO964IsQ7kNvwF6oGP8&_nc_oc=Adrs2J1ByHsaNcb7YL3Oo7tmN0b6R3eaC_Ba-AQzlJ5lFjAhkbfhkXXD0j0Tr1B8dURCuxIGRk4W5iDYFtsBNdl8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-atl3-1.xx&oh=03_Q7cD5AEZFdRqjSKdvJEEkguo1orQ2oQbeJaNkIhCXosdYQJefw&oe=6A19AD3D" alt="Lam Giang" className="w-full h-full object-cover" />
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-1">Lam Giang</h4>
-              <p className="text-brand font-medium text-sm">người yêu của dev</p>
+              <p className="text-brand font-medium text-sm">24040419</p>
             </div>
             <div className="group">
               <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 shadow-xl border-4 border-white group-hover:-translate-y-2 transition duration-300">
