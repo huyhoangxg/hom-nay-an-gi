@@ -252,7 +252,7 @@ function App() {
 
           <button 
             onClick={handleRandomize} 
-            className={`absolute -bottom-6 -right-4 md:-bottom-12 md:-right-0 z-20 ${randomFood ? 'bg-white text-brand' : 'bg-yellow-400 text-yellow-900'} font-extrabold px-8 py-5 md:px-10 md:py-6 rounded-full flex items-center gap-3 md:gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:scale-110 transition-all outline-none border-4 border-white/50`}
+            className={`absolute -bottom-6 -right-4 md:-bottom-8 md:-right-8 z-20 ${randomFood ? 'bg-white text-brand' : 'bg-yellow-400 text-yellow-900'} font-extrabold px-8 py-5 md:px-10 md:py-6 rounded-full flex items-center gap-3 md:gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:scale-110 transition-all outline-none border-4 border-white/50`}
           >
             <span className={`text-4xl md:text-5xl ${isSpinning ? 'animate-spin' : ''}`}>🎲</span>
             <span className="text-xl md:text-3xl">{randomFood || "Ngẫu nhiên thông minh!"}</span>
