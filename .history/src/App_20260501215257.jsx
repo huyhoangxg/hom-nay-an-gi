@@ -225,10 +225,16 @@ function App() {
 
       <main id="hero" className="container mx-auto px-6 py-10 md:py-20 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
         <div className="w-full md:w-1/2 flex flex-col items-start gap-6">
-            <h1 className="text-3xl md:text-4xl lg:text-[48px] font-bold leading-[1.1] tracking-tight text-[#111827]">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black-500">
+              Ăn gì khó?
+            </h1>
+            <h1 className="text-5xl md:text-6xl lg:text-[64px] font-extrabold text-brand">
+              Để tụi này lo!
+            </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-extrabold leading-[1.1] tracking-tight text-[#111827]">
             Ăn gì khó?
           </h1>
-          <h1 className="text-4xl md:text-5xl lg:text-[72px] font-extrabold leading-[1.1] tracking-tight text-[#111827]">
+          <h1 className="text-4xl md:text-5xl lg:text-[64px] font-extrabold leading-[1.1] tracking-tight text-[#111827]">
             Để tụi này lo!
           </h1>
           <p className="text-textGray text-base md:text-lg leading-relaxed lg:pr-12">
