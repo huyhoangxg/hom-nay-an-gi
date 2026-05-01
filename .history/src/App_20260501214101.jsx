@@ -449,7 +449,7 @@ function App() {
 
                   <div>
                     <label className="block text-sm font-medium text-textDark mb-2">Lời đánh giá của bạn <span className="text-red-500">*</span></label>
-                    <textarea required disabled={isSubmitting} rows="4" value={formData.feedback} onChange={(e) => setFormData({...formData, feedback: e.target.value})} className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand outline-none resize-none disabled:bg-gray-100"></textarea>
+                    <textarea required disabled={isSubmitting} rows="4" value={formData.feedback} onChange={(e) => setFormData({...formData, feedback: e.target.value})} placeholder="Bạn thấy sao?" className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand outline-none resize-none disabled:bg-gray-100"></textarea>
                   </div>
 
                   <div>
