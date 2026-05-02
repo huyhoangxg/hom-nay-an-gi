@@ -19,8 +19,6 @@ const SLIDER_IMAGES = [
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [randomFood, setRandomFood] = useState("");
-  // Thêm một state để lưu ảnh món ăn đang hiển thị
-  const [randomFoodImage, setRandomFoodImage] = useState(null); 
   const [isSpinning, setIsSpinning] = useState(false);
   
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -42,13 +40,10 @@ function App() {
   useEffect(() => {
     fetchTestimonials();
     const slideInterval = setInterval(() => {
-      // Chỉ tự động lướt slide nếu CHƯA random ra món nào
-      if (!randomFoodImage) {
-        setCurrentSlide((prev) => (prev + 1) % SLIDER_IMAGES.length);
-      }
+      setCurrentSlide((prev) => (prev + 1) % SLIDER_IMAGES.length);
     }, 3500);
     return () => clearInterval(slideInterval);
-  }, [randomFoodImage]); // Thêm randomFoodImage vào dependency array
+  }, []);
 
   const fetchTestimonials = async () => {
     try {
@@ -77,7 +72,6 @@ function App() {
   const handleRandomize = () => {
     if (isSpinning) return;
     setIsSpinning(true);
-    setRandomFoodImage(null); // Xóa ảnh cũ đi khi bắt đầu quay
     let count = 0;
     const spinInterval = setInterval(() => {
       const randomItem = FOOD_DATABASE[Math.floor(Math.random() * FOOD_DATABASE.length)];
@@ -88,8 +82,6 @@ function App() {
         setIsSpinning(false);
         const finalItem = FOOD_DATABASE[Math.floor(Math.random() * FOOD_DATABASE.length)];
         setRandomFood(`${finalItem.name} 🤤`);
-        // Lưu lại hình ảnh của món ăn vừa được chọn
-        setRandomFoodImage(finalItem.img); 
       }
     }, 100);
   };
@@ -233,8 +225,11 @@ function App() {
 
       <main id="hero" className="container mx-auto px-6 py-10 md:py-20 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
         <div className="w-full md:w-1/2 flex flex-col items-start gap-6">
+            <h1 className="text-3xl md:text-4xl lg:text-[48px] font-bold leading-[1.1] tracking-tight text-[#111827]">
+            Ăn gì khó?
+          </h1>
           <h1 className="text-4xl md:text-5xl lg:text-[72px] font-extrabold leading-[1.1] tracking-tight text-[#111827]">
-            Ăn ngon - Nghĩ gọn
+            Để tụi này lo!
           </h1>
           <p className="text-textGray text-base md:text-lg leading-relaxed lg:pr-12">
             Giải quyết câu hỏi "hôm nay ăn gì?" hàng ngày. Nhanh chóng, vui vẻ và cá nhân hóa cho sinh viên, dân văn phòng và người ăn một mình.
@@ -246,27 +241,11 @@ function App() {
         
         <div className="w-full md:w-1/2 relative">
           
-          <div className="relative h-[450px] md:h-[600px] rounded-[32px] overflow-hidden shadow-2xl bg-black">
-             {/* Nếu có món ăn thì show hình món đó */}
-             {randomFoodImage ? (
-                <img 
-                  src={randomFoodImage} 
-                  alt="Món ăn vừa random" 
-                  className="absolute inset-0 w-full h-full object-cover animate-fade-in z-10" 
-                />
-              ) : (
-                /* Ngược lại thì hiển thị các hình ảnh dạng slider */
-                SLIDER_IMAGES.map((img, index) => (
-                  <img 
-                    key={index} 
-                    src={img} 
-                    alt="Món ăn" 
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 z-0'}`} 
-                  />
-                ))
-              )}
-              {/* Bóng làm nền cho chữ */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+          <div className="relative h-[450px] md:h-[600px] rounded-[32px] overflow-hidden shadow-2xl">
+            {SLIDER_IMAGES.map((img, index) => (
+              <img key={index} src={img} alt="Món ăn" className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`} />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
           </div>
 
           <button 
@@ -344,13 +323,13 @@ function App() {
               <h3 className="font-bold text-gray-800 text-xl mb-6">Kết quả: {searchResults.length} món</h3>
               {searchResults.length > 0 ? (
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                  {/* Sửa lại hiển thị ảnh và tên trong phần tìm kiếm */}
                   {searchResults.map(food => (
-                    <div key={food.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col h-full overflow-hidden">
-                       <img src={food.img} alt={food.name} className="w-full h-32 object-cover" />
-                       <div className="p-4 flex-grow flex items-center">
-                         <h4 className="font-extrabold text-lg text-textDark leading-tight">{food.name}</h4>
-                       </div>
+                    <div key={food.id} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300 flex flex-col h-full">
+                      <h4 className="font-extrabold text-lg text-textDark mb-3">{food.name}</h4>
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        <span className="bg-orange-50 text-orange-600 border border-orange-100 text-[11px] font-semibold px-2 py-1 rounded-md">{food.price}</span>
+                        <span className="bg-blue-50 text-blue-600 border border-blue-100 text-[11px] font-semibold px-2 py-1 rounded-md">{food.style}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -552,7 +531,7 @@ function App() {
             <div>
               <h4 className="text-white font-bold text-lg mb-4">Liên hệ</h4>
               <div className="space-y-3 text-gray-400 text-sm">
-                <p>Email: support@homnayangi.vn</p><p>Điện thoại: 035 788 616</p><p>Địa chỉ: Trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội</p>
+                <p>Email: support@homnayangi.vn</p><p>Điện thoại: 035 788 616</p>
               </div>
             </div>
             <div>

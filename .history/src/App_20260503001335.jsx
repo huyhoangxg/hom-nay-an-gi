@@ -233,8 +233,11 @@ function App() {
 
       <main id="hero" className="container mx-auto px-6 py-10 md:py-20 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
         <div className="w-full md:w-1/2 flex flex-col items-start gap-6">
+            <h1 className="text-3xl md:text-4xl lg:text-[48px] font-bold leading-[1.1] tracking-tight text-[#111827]">
+            Ăn gì khó?
+          </h1>
           <h1 className="text-4xl md:text-5xl lg:text-[72px] font-extrabold leading-[1.1] tracking-tight text-[#111827]">
-            Ăn ngon - Nghĩ gọn
+            Để tụi này lo!
           </h1>
           <p className="text-textGray text-base md:text-lg leading-relaxed lg:pr-12">
             Giải quyết câu hỏi "hôm nay ăn gì?" hàng ngày. Nhanh chóng, vui vẻ và cá nhân hóa cho sinh viên, dân văn phòng và người ăn một mình.
@@ -552,7 +555,7 @@ function App() {
             <div>
               <h4 className="text-white font-bold text-lg mb-4">Liên hệ</h4>
               <div className="space-y-3 text-gray-400 text-sm">
-                <p>Email: support@homnayangi.vn</p><p>Điện thoại: 035 788 616</p><p>Địa chỉ: Trường Đại học Ngoại ngữ - Đại học Quốc gia Hà Nội</p>
+                <p>Email: support@homnayangi.vn</p><p>Điện thoại: 035 788 616</p>
               </div>
             </div>
             <div>
