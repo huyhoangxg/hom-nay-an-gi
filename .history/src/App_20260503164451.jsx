@@ -244,13 +244,13 @@ function App() {
           </button>
         </div>
         
-        <div className="w-full md:w-1/2 relative">
-          
-          <div className="relative h-[450px] md:h-[600px] rounded-[32px] overflow-hidden shadow-2xl bg-black">
+        <div className="relative h-[450px] md:h-[600px] rounded-[32px] overflow-hidden shadow-2xl bg-black">
              {/* 1. TRẠNG THÁI ĐANG QUAY (isSpinning === true) */}
              {isSpinning ? (
                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#fff7ed] animate-fade-in">
                  <div className="relative w-28 h-28 mb-6">
+                   <div className="absolute inset-0 border-8 border-orange-200 rounded-full"></div>
+                   <div className="absolute inset-0 border-8 border-brand border-t-transparent rounded-full animate-spin"></div>
                    <div className="absolute inset-0 flex items-center justify-center text-5xl animate-bounce">🎲</div>
                  </div>
                  <h3 className="text-2xl md:text-3xl font-extrabold text-brand animate-pulse">Đang "lắc" menu...</h3>
@@ -278,16 +278,6 @@ function App() {
               {/* Bóng làm nền cho chữ (Ẩn đi khi đang quay để màn hình loading sáng sủa) */}
               {!isSpinning && <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none"></div>}
           </div>
-
-          <button 
-            onClick={handleRandomize} 
-            className={`absolute -bottom-6 -right-4 md:-bottom-12 md:-right-0 z-20 ${randomFood ? 'bg-white text-brand' : 'bg-yellow-400 text-yellow-900'} font-extrabold px-8 py-5 md:px-10 md:py-6 rounded-full flex items-center gap-3 md:gap-4 shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:scale-110 transition-all outline-none border-4 border-white/50`}
-          >
-            <span className={`text-4xl md:text-5xl ${isSpinning ? 'animate-spin' : ''}`}>🎲</span>
-            <span className="text-xl md:text-3xl">{randomFood || "Ngẫu nhiên thông minh!"}</span>
-          </button>
-          
-        </div>
       </main>
 
       {/* Section Tính năng có nền hơi ngả màu kem */}

@@ -251,6 +251,8 @@ function App() {
              {isSpinning ? (
                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#fff7ed] animate-fade-in">
                  <div className="relative w-28 h-28 mb-6">
+                   <div className="absolute inset-0 border-8 border-orange-200 rounded-full"></div>
+                   <div className="absolute inset-0 border-8 border-brand border-t-transparent rounded-full animate-spin"></div>
                    <div className="absolute inset-0 flex items-center justify-center text-5xl animate-bounce">🎲</div>
                  </div>
                  <h3 className="text-2xl md:text-3xl font-extrabold text-brand animate-pulse">Đang "lắc" menu...</h3>
