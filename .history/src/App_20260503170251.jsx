@@ -401,7 +401,7 @@ function App() {
               {testimonials.length === 0 ? (
                 <div className="text-center text-gray-500 w-full py-10">Chưa có đánh giá nào. Hãy là người đầu tiên!</div>
               ) : (
-               testimonials.map((item) => (
+               {testimonials.map((item) => (
                 <div 
                   key={item.id} 
                   /* --- ĐÃ SỬA: Ép cứng chiều Rộng (w) và chiều Cao (h) --- */
@@ -434,7 +434,7 @@ function App() {
                     )}
                   </div>
                 </div>
-              ))
+              ))}
               )}
             </div>
           )}
