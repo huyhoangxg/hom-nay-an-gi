@@ -481,8 +481,8 @@ function App() {
                       className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-brand hover:file:bg-orange-100 cursor-pointer outline-none"
                     />
                     {imagePreview && (
-                      <div className="mt-4 relative inline-block max-w-full">
-                        <img src={imagePreview} alt="Preview" className="max-h-40 w-auto max-w-full object-contain rounded-xl border border-gray-200 shadow-sm bg-gray-50" />
+                      <div className="mt-4 relative inline-block">
+                        <img src={imagePreview} alt="Preview" className="h-32 object-cover rounded-xl border border-gray-200 shadow-sm" />
                         <button type="button" onClick={() => {setImageFile(null); setImagePreview(null);}} className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 shadow hover:bg-red-600 transition">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                         </button>
