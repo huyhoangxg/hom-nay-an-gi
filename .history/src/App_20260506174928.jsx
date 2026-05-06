@@ -16,8 +16,9 @@ const SLIDER_IMAGES = [
   "https://cdn.zsoft.solutions/poseidon-web/app/media/Kham-pha-am-thuc/11.2023/241123-banh-cuon-buffet-poseidon-3.jpg"
 ];
 
+const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
 function App() {
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [randomFood, setRandomFood] = useState("");
   // Thêm một state để lưu ảnh món ăn đang hiển thị
@@ -244,11 +245,12 @@ function App() {
             <button onClick={() => scrollToSection('features')} className="bg-brand hover:bg-[#f96b15] text-white font-semibold py-3.5 px-8 rounded-full shadow-lg shadow-orange-500/30 transition transform hover:-translate-y-1 outline-none">
               Khám phá ngay
             </button>
-            {/* Nút bật video mới thêm
+            
+            {/* Nút bật video mới thêm */}
             <button onClick={() => setIsVideoModalOpen(true)} className="bg-white text-brand hover:bg-orange-50 font-semibold py-3.5 px-8 rounded-full shadow-lg shadow-orange-500/10 transition transform hover:-translate-y-1 flex items-center gap-2 outline-none border border-orange-100">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-brand"><path d="M8 5v14l11-7z"/></svg>
               Xem video giới thiệu
-            </button> */}
+            </button>
           </div>
         </div>
         
@@ -297,29 +299,6 @@ function App() {
           
         </div>
       </main>
-
-      {/* Section Video Giới thiệu */}
-      <section id="video-intro" className="bg-[#fdfaf5] py-16 md:py-24 border-t border-orange-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-textDark mb-4">Xem cách chúng tôi hoạt động</h2>
-            <p className="text-textGray text-lg">Khám phá trải nghiệm "Hôm nay ăn gì?" chỉ trong 1 phút</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto rounded-[32px] overflow-hidden shadow-2xl shadow-orange-900/10 border-4 border-white bg-white group hover:shadow-orange-500/20 transition-all duration-500 hover:-translate-y-2">
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              <iframe 
-                className="absolute top-0 left-0 w-full h-full" 
-                src="https://www.youtube.com/embed/rqNbAvQYZUg?autoplay=1"
-                title="Hôm nay ăn gì? Video giới thiệu" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Section Tính năng có nền hơi ngả màu kem */}
       <section id="features" className="bg-[#faf6f0] py-20 scroll-mt-20 border-t border-orange-50">
@@ -602,7 +581,7 @@ function App() {
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              <iframe className="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/rqNbAvQYZUg?autoplay=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe className="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/Hjc03nySrbw?autoplay=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
         </div>
